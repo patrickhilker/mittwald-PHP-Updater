@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Frage nach Kundennummer (Benutzername), Passwort und 2FA
-read -p "Bitte geben deine Kundennummer ein: " username
-read -s -p "Bitte gib dein Passwort ein (Eingabe ist unsichtbar): " password
+read -p "Kundennummer: " username
+read -s -p "Passwort (Eingabe ist unsichtbar): " password
 echo ""
 read -p "2FA-Code (falls aktiviert, sonst einfach Enter drücken): " mfa
 echo ""
@@ -15,7 +15,7 @@ api_key=$(echo "$api_response" | jq -r '.accessToken')
 
 # Überprüfung der Authentifizierung
 if [ -z "$api_key" ] || [ "$api_key" == "null" ]; then
-    echo "Authentifizierung fehlgeschlagen. Bitte überprüf deine Zugangsdaten."
+    echo "Authentifizierung fehlgeschlagen. Bitte überprüfe deine Zugangsdaten."
     exit 1
 else
     echo "Authentifizierung erfolgreich. API-Schlüssel erhalten."
