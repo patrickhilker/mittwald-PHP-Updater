@@ -36,7 +36,7 @@ fi
 # Lese die Account-IDs aus einer Datei namens 'accounts.txt' und aktualisiere die PHP-Version
 while read -r account_id; do
     if [[ $account_id =~ ^p[0-9]+$ ]]; then
-        response=$(curl -s -L -o /dev/null -w "%{http_code}" -X POST "https://api.mittwald.de/v1/accounts/$account_id/installations/action/update-php" \
+        response=$(curl -s -L -o /dev/null -w "%{http_code}" -X POST "https://api.mittwald.de/v1/accounts/$account_id/installations/actions/update-php" \
         -H "Authorization: Bearer $api_key" \
         -H "Content-Type: application/json" \
         -d "{\"version\": \"$php_version\"}")
