@@ -24,11 +24,11 @@ fi
 echo ""
 
 # Frage die gewünschte PHP-Version ab
-read -p "Bitte gib die gewünschte PHP-Version ein (7.0, 7.1, 7.2, 7.3, 8.0, 8.1, 8.2, 8.3): " php_version
+read -p "Bitte gib die gewünschte PHP-Version ein (7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2, 8.3): " php_version
 echo ""
 
 # Überprüfe die Eingabe der PHP-Version
-if [[ ! $php_version =~ ^(7\.0|7\.1|7\.2|7\.3|8\.0|8\.1|8\.2|8\.3)$ ]]; then
+if [[ ! $php_version =~ ^(7\.0|7\.1|7\.2|7\.3|7\.4|8\.0|8\.1|8\.2|8\.3)$ ]]; then
     echo "Ungültige PHP-Version eingegeben."
     exit 1
 fi
